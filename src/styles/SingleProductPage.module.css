@@ -94,6 +94,7 @@
     justify-content: space-around;
     align-items: center;
     column-gap: 20px;
+    align-self: baseline;
 }
 
 .descr {
@@ -101,8 +102,10 @@
 }
 
 .description {
-    margin-top: 50px;
-    font-size: 17px;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(202, 202, 202, 0.56);
+    font-size: 15px;
     color: rgb(60, 60, 60);
 }
 
@@ -198,5 +201,13 @@
 
     .specsCont {
         width: 100%;
+    }
+
+    .fullInfo {
+        padding: 0px;
+    }
+
+    .featureCont > p {
+        width: 50%;
     }
 }
