@@ -35,8 +35,6 @@ export default function ProductPage({ product, hideDropDown, setHideDropDown, hi
     url = url===undefined?product.images[0]:url
     const item = {name: product.name, url: url, price: product.salePrice}
 
-    console.log(product)
-
     const starStyle = {
           "--percent": `${(Number(product.customerReviewAverage) / 5) * 100}%`,
       };
@@ -61,10 +59,7 @@ export default function ProductPage({ product, hideDropDown, setHideDropDown, hi
                         <p className={styles.price}>{product.salePrice}&euro;</p>
                     </div>
                     <div className={styles.cart} onClick={() => cartClick(item)}>Add to cart</div>
-                    <div className={styles.features}>{product.features.map((el) => {
-                        return el.feature
-                        })}
-                    </div>
+                    <div className={styles.description}>{product.longDescription}</div>
                 </div>
                 <div className={styles.images}>
                     <Slider images={product.images} index={index} handleImageClick={handleImageClick}/>
@@ -74,9 +69,24 @@ export default function ProductPage({ product, hideDropDown, setHideDropDown, hi
                 </div>
             </div>
             <div className={styles.fullInfo}>
-                <p className={styles.longDescription}>Description</p>
-                <div className={styles.longDCont}>
-                    <div className={styles.description}>{product.longDescription}</div>
+                <p className={styles.overview}>Overview</p>
+                <div className={styles.overviewCont}>
+                    <div className={styles.featureCont}>
+                        <p>Features</p>
+                        <ul className={styles.features}>
+                            {product.features.map((el) => {
+                                if (el.feature[0] !== '&') return <li key={el.feature}>{el.feature}</li>// to not have feature like this:  Battery life varies by use and configuration. See apple.com/batteries for more information.
+                            })}
+                        </ul>
+                    </div>
+                    <div className={styles.featureCont}>
+                        <p>What's included</p>
+                        <ul className={styles.features}>
+                            {product.includedItemList.map((el) => {
+                                return <li key={el.includedItem}>{el.includedItem}</li>
+                            })}
+                        </ul>
+                    </div>
                 </div>
                 <p className={styles.specs}>Specifications</p>
                 <div className={styles.outerCont}>
