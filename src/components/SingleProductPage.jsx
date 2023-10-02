@@ -50,14 +50,16 @@ export default function ProductPage({ product, hideDropDown, setHideDropDown, hi
                         <p className={styles.stars} style={starStyle}></p>
                         <p className={styles.review}>{product.customerReviewAverage} ({product.customerReviewCount===null?0:product.customerReviewCount} Reviews)</p>
                     </div>
-                    {product.onSale===true?
-                    <p className={styles.sale}>
-                        <svg width="60" height="20" xmlns="http://www.w3.org/2000/svg">
-                            <text x="0" y="15" fontSize="15" fill='red'>{product.regularPrice}&euro;</text>
-                            <line x1="0" y1="5" x2="50" y2="15" stroke="#ff0000bd" strokeWidth="1"/>
-                        </svg>
-                    </p>:null}
-                    <p className={styles.price}>{product.salePrice}&euro;</p>
+                    <div className={styles.priceCont}>
+                        {product.onSale===true?
+                        <p className={styles.sale}>
+                            <svg width="60" height="20" xmlns="http://www.w3.org/2000/svg">
+                                <text x="0" y="15" fontSize="15" fill='red'>{product.regularPrice}&euro;</text>
+                                <line x1="0" y1="5" x2="50" y2="15" stroke="#ff0000bd" strokeWidth="1"/>
+                            </svg>
+                        </p>:null}
+                        <p className={styles.price}>{product.salePrice}&euro;</p>
+                    </div>
                     <div className={styles.cart} onClick={() => cartClick(item)}>Add to cart</div>
                     <div className={styles.features}>{product.features.map((el) => {
                         return el.feature

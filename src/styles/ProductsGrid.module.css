@@ -66,3 +66,9 @@
     font-size: 25px;
     font-weight: bold;
 }
+
+@media (max-width:750px) {
+    .cont {
+        padding: 30px;
+    }
+}
