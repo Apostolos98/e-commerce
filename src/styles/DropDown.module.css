@@ -74,3 +74,26 @@
 .active {
     background-color: rgb(203, 203, 203);
 }
+
+@media (max-width:750px) {
+    .shopBy {
+        font-size: 18px;
+    }
+
+    .cont {
+        max-width: 150px;
+        font-size: 14px;
+    }
+
+    .departments {
+        min-width: 150px;
+    }
+
+    .subCat {
+        left: 190px;
+    }
+
+    .link {
+        min-width: 100px;
+    }
+}

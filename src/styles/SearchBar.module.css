@@ -82,3 +82,26 @@
     padding-left: 2px;
     padding-right: 2px;
 }
+
+@media (max-width:750px) {
+    .cont2 {
+        max-width: 150px;
+    }
+
+    .cont2 > form > input {
+        font-size: 17px;
+        min-width: 100px;
+    }
+
+    .logo > div:nth-child(1) {
+        font-size: 18px;
+    }
+    
+    .logo > div:nth-child(2) {
+        font-size: 18px;
+    }
+
+    .logo {
+        max-width: 80px;
+    }
+}
