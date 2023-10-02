@@ -1,0 +1,60 @@
+.cont {
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgb(213, 213, 213);
+    padding: 20px;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: rgb(62, 62, 62);
+}
+
+.imgCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 256px;
+    height: 256px;
+    overflow: hidden;
+}
+
+.imgCont > img {
+    max-height: 256px;
+    max-width: 256px;
+    object-fit: cover;
+    
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.averageRating::after {
+    content: "★★★★★";
+}
+
+.averageRating {
+    background: linear-gradient(90deg, gold var(--percent), rgba(0, 0, 0, 0.2) var(--percent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 25px;
+}
+ 
+
+.reviews {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.sale {
+    font-size: 15px;
+    color: red;
+}

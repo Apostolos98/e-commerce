@@ -1,0 +1,84 @@
+.cont {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100px;
+    background-color: #0046be;
+    color: white;
+}
+
+.cont2 > form {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.cont2:focus-within {
+    outline: solid 2px white;
+}
+
+.cont2 {
+    background-color: white;
+    border-radius: 5px;
+}
+
+.cont2 > form > * {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.cont2 > form > input {
+    font-size: 20px;
+    min-width: 300px;
+}
+
+.logo > div:nth-child(1) {
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo > div:nth-child(2) {
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.logo {
+    border: 5px solid black;
+    display: flex;
+    max-width: 110px;
+}
+
+.cont3 {
+    font-size: 25px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.number {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(255, 183, 0);
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
