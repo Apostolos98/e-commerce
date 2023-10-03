@@ -1,0 +1,43 @@
+.button {
+    background-color: rgb(0, 89, 255);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.cont {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.textImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    background-color: rgba(0, 119, 255, 0.607);
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.textImage > img {
+    border-radius: 30px;
+}
+
+.text {
+    font-size: 30px;
+}
+
+.one {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
