@@ -20,10 +20,9 @@ export default function ProductsGrid({ products, setPage, page, lastPage, hideDr
 
     const pages = []
     for (let i = 1; i < 3 && i + page < Number(lastPage); i++) {
-        pages.push(<p onClick={() => setPage(page + i)}>{page + i}</p>)
+        pages.push(<p onClick={() => setPage(page + i)} key={i}>{page + i}</p>)
     }
 
-    console.log(lastPage>1, lastPage)
     return (
         <div className={styles.cont} onClick={() => handleClick()}>
             <div className={styles.forShorting}>
@@ -66,10 +65,10 @@ export default function ProductsGrid({ products, setPage, page, lastPage, hideDr
             </div>
             <div className={styles.npButtons}>
                 <p onClick={handlePrev}>Previous</p>
-                {page>1?<p onClick={() => setPage(1)}>1</p>:null}
+                {page>1?<p onClick={() => setPage(1)} key={'1'}>1</p>:null}
                 <p className={styles.currentPage}>{page}</p>
                 {pages}
-                {Number(lastPage) - page > 3?<span>...</span>:null}
+                {Number(lastPage) - page > 3?<span key={'...'}>...</span>:null}
                 {Number(lastPage) !== page?<p onClick={() => setPage(Number(lastPage))}>{lastPage}</p>:null}
                 <p onClick={handleNext}>Next</p>
             </div>

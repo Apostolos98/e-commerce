@@ -18,7 +18,7 @@ export default function Product() {
                 if (!res.ok) throw new Error(`Error: Request failed with status code ${res.status} (${res.statusText})`)
             }
             catch (err) {
-                alert(err.message + ', at Product.jsx')
+                console.log(err.message + ', at Product.jsx')
             }
             if (res) {
                 const data = await res.json()

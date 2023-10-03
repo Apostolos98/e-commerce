@@ -32,7 +32,6 @@ export default function Search() {
         })
         .then(data => data)
         .catch(error => {
-            alert(error.message)
             console.log(error.message)
         })
       )

@@ -193,10 +193,11 @@
 
     .descr {
         max-width: 100%;
+        margin-top: 40px;
     }
 
     .primary {
-        width: 50vw;
+        width: 60vw;
     }
 
     .specsCont {
@@ -209,5 +210,9 @@
 
     .featureCont > p {
         width: 50%;
+    }
+
+    .images {
+        column-gap: 0px;
     }
 }

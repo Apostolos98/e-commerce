@@ -26,7 +26,6 @@ export default function Home() {
         })
         .then(data => data)
         .catch(error => {
-            alert(error.message, 'home')
             console.log(error.message)
         })
       )

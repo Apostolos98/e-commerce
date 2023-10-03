@@ -29,7 +29,6 @@ export default function Category() {
         })
         .then(data => data)
         .catch(error => {
-            alert(error.message, 'failed to fetch at category')
             console.log(error.message, 'failed to fetch at category')
         })
       )
