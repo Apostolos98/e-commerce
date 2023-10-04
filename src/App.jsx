@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react'
 import styles from './styles/App.module.css'
 import { useNavigate } from 'react-router-dom'
+import img from './assets/bestbuyApi.jpg'
 
 function App() {
   const navigate = useNavigate();
   return (
     <div className={styles.cont}>
       <div className={styles.textImage}>
-        <img src="/src/assets/bestbuyApi.jpg" alt="" />
+        <img src={img} alt="" />
         <div className={styles.text}>
           <p className={styles.one}>This is my fake e-commeerce web site. It is based on Best Buy Api using most of the features the api provides to developers.</p>
           <p>
