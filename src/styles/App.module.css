@@ -1,5 +1,5 @@
 .button {
-    background-color: rgb(0, 89, 255);
+    background-color: rgba(0, 89, 255, 0.586);
     color: white;
     border-radius: 10px;
     padding: 20px;
@@ -17,6 +17,9 @@
     align-items: center;
     flex-direction: column;
     row-gap: 50px;
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+    color: rgba(255, 255, 255, 0.711);
 }
 
 .textImage {
@@ -40,4 +43,55 @@
 .one {
     font-weight: bold;
     margin-bottom: 30px;
+}
+
+@media (max-width:1000px) {
+    .textImage > img {
+        width: 300px;
+    }
+
+    .cont {
+        padding: 20px;
+    }
+
+    .textImage {
+        column-gap: 20px;
+    }
+}
+
+@media (max-width:750px) {
+    .textImage > img {
+        width: 160px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .cont {
+        padding: 5px;
+    }
+
+    .textImage {
+        column-gap: 20px;
+        padding: 5px;
+    }
+}
+
+@media (max-width:400px) {
+    .textImage > img {
+        width: 128px;
+    }
+
+    .text {
+        font-size: 15px;
+    }
+
+    .cont {
+        padding: 10px;
+    }
+
+    .textImage {
+        column-gap: 10px;
+    }
 }
