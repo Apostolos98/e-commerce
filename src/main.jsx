@@ -12,6 +12,7 @@ export const CartContext = createContext(null)
 
 function ForContext({ children }) {
   const [cartItems, setItems] = useState([])
+  const [searchWord, setSearchWord] = useState('"Most popular products"')
   
   function addToCart(item) {
     for (let i = 0; i < cartItems.length; i++) {
@@ -33,7 +34,7 @@ function ForContext({ children }) {
   }
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, searchWord, setSearchWord }}>
       {children}
     </CartContext.Provider>
   )

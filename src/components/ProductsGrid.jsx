@@ -1,8 +1,19 @@
+import { useContext, useEffect } from 'react';
 import styles from '../styles/ProductsGrid.module.css';
 import Card from './Card'
 import Loading from './Loading';
+import { CartContext } from '../main';
 
 export default function ProductsGrid({ products, setPage, page, lastPage, hideDropDown, setHideDropDown, hideCart, setHideCart, handleShorting, loading }) {
+    const { searchWord } = useContext(CartContext)
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+          });
+    }, [page])
+
     function handleNext() {
         if (page < Number(lastPage)) {
             setPage(page + 1)
@@ -10,7 +21,7 @@ export default function ProductsGrid({ products, setPage, page, lastPage, hideDr
     }
 
     function handlePrev() {
-        if (page === 1) return;
+        if (page <= 1) return;
         else setPage(page - 1)
     }
 
@@ -29,12 +40,15 @@ export default function ProductsGrid({ products, setPage, page, lastPage, hideDr
             {loading===true?<Loading />:
             <>
                 <div className={styles.forShorting}>
-                    <label htmlFor="sort">Short by</label>
-                    <select id="sort" onChange={handleShorting}>
-                        <option value="popularity">Popularity</option>
-                        <option value="priceAsc">Price-ascending</option>
-                        <option value="priceDes">Price-descending</option>
-                    </select>
+                    <div className={styles.searchWord}>{searchWord}</div>
+                    <div>
+                        <label htmlFor="sort">Short by</label>
+                        <select id="sort" onChange={handleShorting}>
+                            <option value="popularity">Popularity</option>
+                            <option value="priceAsc">Price-ascending</option>
+                            <option value="priceDes">Price-descending</option>
+                        </select>
+                    </div>
                 </div>
                 <div className={styles.productCont}>
                     {products.map((el, ind) => {
@@ -72,7 +86,7 @@ export default function ProductsGrid({ products, setPage, page, lastPage, hideDr
                     <p className={styles.currentPage}>{page}</p>
                     {pages}
                     {Number(lastPage) - page > 3?<span key={'...'}>...</span>:null}
-                    {Number(lastPage) !== page?<p onClick={() => setPage(Number(lastPage))}>{lastPage}</p>:null}
+                    {Number(lastPage) !== page && Number(lastPage) !== 0?<p onClick={() => setPage(Number(lastPage))}>{lastPage}</p>:null}
                     <p onClick={handleNext}>Next</p>
                 </div>
                 <div className={(hideDropDown===false || hideCart === false?styles.forGray:styles.forGray + ' ' + styles.hidden)}></div>

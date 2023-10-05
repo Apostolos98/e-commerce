@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ItemsPage from "./components/ItemsPage";
+import { CartContext } from "./main";
 
 export default function Search() {
     const { q } = useParams()
@@ -9,12 +10,12 @@ export default function Search() {
     const [sort, setSort] = useState('customerReviewCount.dsc')
     const [lastPage, setLastPage] = useState(1)
     const [loading, setLoading] = useState(true)
+    const { setSearchWord } = useContext(CartContext)
 
     useEffect(() => {
         let words = q.split('+')
         words = words.map((el) => `search=${el}`)
         words = words.join('&')
-        console.log(words)
         fetchProducts(words, page)
         .then(data => {
             setProd(data.products)
@@ -22,6 +23,17 @@ export default function Search() {
             setLoading(false)
         })
     }, [page, q, sort])
+
+    useEffect(() => {
+        setPage(1)
+        let words = q.split('+') // for the searchWord to change for each new search
+        let searchW = '';
+        for (let i = 0; i < words.length; i++) {
+            searchW += ' ' + words[i]
+        }
+        searchW = `"${searchW}"`
+        setSearchWord(searchW)
+    }, [q])    
     
     function fetchProducts(words, page) {
       return (

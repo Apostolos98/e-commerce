@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import ItemsPage from './components/ItemsPage'
+import { CartContext } from './main'
 
 export default function Home() {
     const [products, setProd] = useState([])
@@ -7,6 +8,7 @@ export default function Home() {
     const [sort, setSort] = useState('customerReviewCount.dsc')
     const [lastPage, setLastPage] = useState(1)
     const [loading, setLoading] = useState(true)
+    const { setSearchWord } = useContext(CartContext)
 
     useEffect(() => {
         fetchProducts(page)
@@ -14,7 +16,8 @@ export default function Home() {
             setProd(data.products)
             setLastPage(data.totalPages)
             setLoading(false)
-        })
+        });
+        setSearchWord('"Most popular products"')
     }, [page, sort])
     
     function fetchProducts(page) {

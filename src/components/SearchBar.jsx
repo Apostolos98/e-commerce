@@ -8,7 +8,7 @@ import { CartContext } from '../main';
 
 export default function SearchBar({ hideDropDown, setHideDropDown, hideCart, setHideCart }) {
     const navigate = useNavigate();
-    const { cartItems } = useContext(CartContext)
+    const { cartItems, setSearchWord } = useContext(CartContext)
     const [number, setNumber] = useState(0)
 
     useEffect(() => {
@@ -23,6 +23,7 @@ export default function SearchBar({ hideDropDown, setHideDropDown, hideCart, set
         e.preventDefault();
         const search = e.target.elements.search.value.replace(' ', '+')
         navigate(`/search/${search}`)
+        setSearchWord(`"${e.target.elements.search.value}"`)
     }
 
     function handleClick(e) {

@@ -4,7 +4,7 @@ import styles from '../styles/Page.module.css'
 import { useState } from "react";
 import Cart from "./Cart";
 
-export default function ItemsPage({ products, setPage, page, lastPage, handleShorting, loading }) {
+export default function ItemsPage({ products, setPage, page, lastPage, handleShorting, loading, searchWord }) {
     const [hideDropDown, setHideDropDown] = useState(true)
     const [hideCart, setHideCart] = useState(true)
 

@@ -19,6 +19,10 @@ export default function Category() {
           setLoading(false)
         })
     }, [page, id, sort])
+
+    useEffect(() => {
+      setPage(1)
+    }, [id])
     
     function fetchProducts(id, page) {
       return (

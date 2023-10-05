@@ -41,13 +41,20 @@
     font-size: 20px;
 }
 
-.forShorting {
-    width: 100%;
-    text-align: right;
-    margin-bottom: 50px;
+.searchWord {
+    font-size: 25px;
+    font-weight: bolder;
 }
 
-.forShorting > select {
+.forShorting {
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forShorting > div > select {
     margin-left: 20px;
     font-size: 17px;
     padding: 5px;

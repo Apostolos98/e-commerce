@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from '../styles/DropDown.module.css'
 import svg from '../assets/svg.svg'
 import downArr from '../assets/down-arrow.svg'
+import { CartContext } from "../main";
+import Cart from "./Cart";
 
 export default function DropDown({ hide }) {
   const [categories, setCat] = useState([])
@@ -10,6 +12,7 @@ export default function DropDown({ hide }) {
   const [index, setIndex] = useState(null)
   const [top, setTop] = useState('48.6px')
   const [classN , setName] = useState(styles.departments + ' ' + styles.hidden)
+  const { setSearchWord } = useContext(CartContext)
 
   useEffect(() => {
     async function getData() {
@@ -94,7 +97,7 @@ export default function DropDown({ hide }) {
         <div className={(hide===true||subCat.length===0?styles.subCat + ' ' + styles.hidden:styles.subCat)} style={{ top: top}}>
             {subCat.map((el, ind) => {
                 if (ind < 13) {
-                  return <Link to={`/category/${el.id}`} className={styles.link} key={ind}>{el.name}</Link>
+                  return <Link to={`/category/${el.id}`} className={styles.link} key={ind} onClick={() => setSearchWord(`"${el.name}"`)}>{el.name}</Link>
                 }
             })}
         </div>
