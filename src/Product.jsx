@@ -9,6 +9,7 @@ export default function Product() {
     const [product, setProduct] = useState(null)
     const [hideDropDown, setHideDropDown] = useState(true)
     const [hideCart ,setHideCart] = useState(true)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         async function get() {
@@ -23,6 +24,7 @@ export default function Product() {
             if (res) {
                 const data = await res.json()
                 setProduct(data.products[0])
+                setLoading(false)
             }
         }
         get()
@@ -30,7 +32,7 @@ export default function Product() {
     return (
         <div>
             <SearchBar hideDropDown={hideDropDown} setHideDropDown={setHideDropDown} hideCart = {hideCart} setHideCart={setHideCart}/>
-            {product?<ProductPage product={product} hideDropDown={hideDropDown} setHideDropDown={setHideDropDown} hideCart={hideCart} setHideCart={setHideCart}/>:null}
+            {<ProductPage product={product} hideDropDown={hideDropDown} setHideDropDown={setHideDropDown} hideCart={hideCart} setHideCart={setHideCart} loading={loading}/>}
             <Cart hideCart={hideCart} setHideCart={setHideCart}/>
         </div>
     )

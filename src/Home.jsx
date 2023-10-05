@@ -6,12 +6,14 @@ export default function Home() {
     const [page, setPage] = useState(1)
     const [sort, setSort] = useState('customerReviewCount.dsc')
     const [lastPage, setLastPage] = useState(1)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetchProducts(page)
         .then(data => {
             setProd(data.products)
             setLastPage(data.totalPages)
+            setLoading(false)
         })
     }, [page, sort])
     
@@ -38,6 +40,6 @@ export default function Home() {
       }
 
     return (
-        <ItemsPage products={products} setPage={setPage} page={page} lastPage={lastPage} handleShorting={handleShorting}/>
+        <ItemsPage products={products} setPage={setPage} page={page} lastPage={lastPage} handleShorting={handleShorting} loading={loading}/>
     )
 }

@@ -8,6 +8,7 @@ export default function Search() {
     const [page, setPage] = useState(1)
     const [sort, setSort] = useState('customerReviewCount.dsc')
     const [lastPage, setLastPage] = useState(1)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         let words = q.split('+')
@@ -18,6 +19,7 @@ export default function Search() {
         .then(data => {
             setProd(data.products)
             setLastPage(data.totalPages)
+            setLoading(false)
         })
     }, [page, q, sort])
     
@@ -44,6 +46,6 @@ export default function Search() {
       }
 
     return (
-        <ItemsPage products={products} setPage={setPage} page={page} lastPage={lastPage} handleShorting={handleShorting}/>        
+        <ItemsPage products={products} setPage={setPage} page={page} lastPage={lastPage} handleShorting={handleShorting} loading={loading}/>        
     )
 }

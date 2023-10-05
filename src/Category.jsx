@@ -9,12 +9,14 @@ export default function Category() {
     const [page, setPage] = useState(1)
     const [sort, setSort] = useState('customerReviewCount.dsc')
     const [lastPage, setLastPage] = useState(1)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetchProducts(id, page)
         .then(data => {
           setProd(data.products)
           setLastPage(data.totalPages)
+          setLoading(false)
         })
     }, [page, id, sort])
     
@@ -41,6 +43,6 @@ export default function Category() {
   }
 
     return (
-        <ItemsPage products={products} setPage={setPage} page={page} lastPage={lastPage} handleShorting={handleShorting}/>
+        <ItemsPage products={products} setPage={setPage} page={page} lastPage={lastPage} handleShorting={handleShorting} loading={loading}/>
     )
 }
