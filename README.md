@@ -1,8 +1,8 @@
-# React + Vite
+# E-commerce website
+## This is my fake e-commeerce web site. It is based on Best Buy Api
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### The Best Buy API provides a simple, REST-based interface for an entire product catalog, past and present. This includes pricing, availability, specifications, descriptions, and images for more than one million current and historical products. Most product information is updated near real-time, including product pricing.
 
-Currently, two official plugins are available:
+## Live site: https://apostols98e-commerce.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Build with: React, React router, Vite
