@@ -42,7 +42,7 @@ export default function ProductsGrid({ products, setPage, page, lastPage, hideDr
                 <div className={styles.forShorting}>
                     <div className={styles.searchWord}>{searchWord}</div>
                     <div>
-                        <label htmlFor="sort">Short by</label>
+                        <label htmlFor="sort">Sort by</label>
                         <select id="sort" onChange={handleShorting}>
                             <option value="popularity">Popularity</option>
                             <option value="priceAsc">Price-ascending</option>

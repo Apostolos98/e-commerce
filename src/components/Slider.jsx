@@ -48,7 +48,6 @@ export default function Slider({ images, index, handleImageClick }) {
     function touchMove(e) {
         e.preventDefault();
         const height = e.currentTarget.clientHeight
-        console.log(height)
         if (active === true) {
             if (!( -(height - 300) > e.changedTouches[0].pageY - pageY + prev) && !(200 < e.changedTouches[0].pageY - pageY + prev)) {
                 e.currentTarget.style.top = `${e.changedTouches[0].pageY - pageY + prev}px`
