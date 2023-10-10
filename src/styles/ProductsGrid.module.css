@@ -78,4 +78,11 @@
     .cont {
         padding: 30px;
     }
+
+    .sortSelect {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }

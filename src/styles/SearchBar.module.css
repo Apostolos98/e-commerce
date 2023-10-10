@@ -59,6 +59,7 @@
     border: 5px solid black;
     display: flex;
     max-width: 110px;
+    cursor: pointer;
 }
 
 .cont3 {
@@ -91,6 +92,11 @@
     .cont2 > form > input {
         font-size: 17px;
         min-width: 100px;
+    }
+
+    .cont2 > form {
+        padding-left: 5px;
+        padding-right: 5px;
     }
 
     .logo > div:nth-child(1) {

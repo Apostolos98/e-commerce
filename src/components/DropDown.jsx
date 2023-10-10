@@ -2,9 +2,8 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from '../styles/DropDown.module.css'
 import svg from '../assets/svg.svg'
-import downArr from '../assets/down-arrow.svg'
+import ham from '../assets/hamburger.svg'
 import { CartContext } from "../main";
-import Cart from "./Cart";
 
 export default function DropDown({ hide }) {
   const [categories, setCat] = useState([])
@@ -80,7 +79,7 @@ export default function DropDown({ hide }) {
 
   return (
     <div className={styles.cont}>
-        <p className={styles.shopBy} id="ShowDep">Shop by Department <img src={downArr} alt="" width={24} className={hide===false?styles.rotate:''}/></p>
+        <p className={styles.shopBy} id="ShowDep">Shop by Department <img src={ham} alt="" width={24}/></p>
         <div className={classN} id="departments">
           {categories.map((el, ind) => {
               if (ind < 20 && ind !== 15 && ind !== 18) {

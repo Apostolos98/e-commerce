@@ -25,11 +25,6 @@
 
 .shopBy > img {
     pointer-events: none;
-    transition: transform 0.5s;
-}
-
-.rotate {
-    transform: rotate(180deg);
 }
 
 .departments {
@@ -78,10 +73,12 @@
 @media (max-width:750px) {
     .shopBy {
         font-size: 18px;
+        column-gap: 0px;
+        align-items: flex-start;
     }
 
     .cont {
-        max-width: 150px;
+        max-width: 125px;
         font-size: 14px;
     }
 

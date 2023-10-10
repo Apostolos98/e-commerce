@@ -46,7 +46,7 @@ export default function SearchBar({ hideDropDown, setHideDropDown, hideCart, set
     return (
         <div className={styles.cont} onClick={(e) => handleClick(e)}>
             <div className={styles.cont1}>
-                <div className={styles.logo}><div>Fake</div><div>Store</div></div>
+                <div className={styles.logo} onClick={() => navigate('/')}><div>Fake</div><div>Store</div></div>
                 <DropDown hide={hideDropDown}/>
             </div>
             <div className={styles.cont2}>

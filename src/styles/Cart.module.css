@@ -113,3 +113,17 @@
 .bin {
     cursor: pointer;
 }
+
+@media (max-width:500px) {
+    .cont {
+        padding: 5px;
+    }
+
+    .forNum {
+        column-gap: 5px;
+    }
+
+    .item {
+        column-gap: 10px;
+    }
+}
