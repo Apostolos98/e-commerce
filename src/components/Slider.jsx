@@ -46,7 +46,12 @@ export default function Slider({ images, index, handleImageClick }) {
     }
 
     function touchMove(e) {
-        e.preventDefault();
+        try {
+            e.preventDefault();
+        }
+        catch (err) {
+
+        }
         const height = e.currentTarget.clientHeight
         if (active === true) {
             if (!( -(height - 300) > e.changedTouches[0].pageY - pageY + prev) && !(200 < e.changedTouches[0].pageY - pageY + prev)) {
