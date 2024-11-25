@@ -38,7 +38,7 @@ export default function DropDown({ hide }) {
   }, [hide])
 
   function subCategoryReq(id) {
-    return (fetch(`https://api.bestbuy.com/v1/categories(id=${id}*)?apiKey=qhqws47nyvgze2mq3qx4jadt&format=json`)
+    return (fetch(`https://api.bestbuy.com/v1/categories(id=${id}*)?apiKey=${process.env.REACT_APP_API_KEY}=json`)
     .then(re => {
         if (!re.ok) throw new Error('Bad responce on DropDownclick')
         else {
