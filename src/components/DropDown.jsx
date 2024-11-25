@@ -16,7 +16,7 @@ export default function DropDown({ hide }) {
   useEffect(() => {
     async function getData() {
         try {
-            const res = await fetch('https://api.bestbuy.com/v1/categories(name=Best Buy*)?apiKey=qhqws47nyvgze2mq3qx4jadt&format=json')
+            const res = await fetch(`https://api.bestbuy.com/v1/categories(name=Best Buy*)?apiKey=${import.meta.env.VITE_API_KEY}&format=json`)
             if (!res.ok) throw new Error('bad responce')
             const data = await res.json()
             setCat(data.categories[0].subCategories)
@@ -38,7 +38,7 @@ export default function DropDown({ hide }) {
   }, [hide])
 
   function subCategoryReq(id) {
-    return (fetch(`https://api.bestbuy.com/v1/categories(id=${id}*)?apiKey=${process.env.REACT_APP_API_KEY}=json`)
+    return (fetch(`https://api.bestbuy.com/v1/categories(id=${id}*)?apiKey=${import.meta.env.VITE_API_KEY}&format=json`)
     .then(re => {
         if (!re.ok) throw new Error('Bad responce on DropDownclick')
         else {

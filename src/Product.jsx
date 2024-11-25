@@ -15,7 +15,7 @@ export default function Product() {
         async function get() {
             let res;
             try {
-                res = await fetch(`https://api.bestbuy.com/v1/products(sku=${sku})?format=json&show=name,regularPrice,salePrice,onSale,longDescription,images,features.feature,details,includedItemList,customerReviewCount,customerReviewAverage&apiKey=${process.env.REACT_APP_API_KEY}`)
+                res = await fetch(`https://api.bestbuy.com/v1/products(sku=${sku})?format=json&show=name,regularPrice,salePrice,onSale,longDescription,images,features.feature,details,includedItemList,customerReviewCount,customerReviewAverage&apiKey=${import.meta.env.VITE_API_KEY}`)
                 if (!res.ok) throw new Error(`Error: Request failed with status code ${res.status} (${res.statusText})`)
             }
             catch (err) {

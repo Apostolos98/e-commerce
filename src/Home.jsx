@@ -22,7 +22,7 @@ export default function Home() {
     
     function fetchProducts(page) {
       return (
-        fetch(`https://api.bestbuy.com/v1/products?sort=${sort}&pageSize=12&apiKey=${process.env.REACT_APP_API_KEY}&page=${page}&format=json&`)
+        fetch(`https://api.bestbuy.com/v1/products?sort=${sort}&pageSize=12&apiKey=${import.meta.env.VITE_API_KEY}&page=${page}&format=json&`)
         .then(re => {
             if (!re.ok) throw new Error(`Error: Request failed with status code ${re.status} (${re.statusText})`)
             else {

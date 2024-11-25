@@ -26,7 +26,7 @@ export default function Category() {
     
     function fetchProducts(id, page) {
       return (
-        fetch(`https://api.bestbuy.com/v1/products((categoryPath.id=${id}))?sort=${sort}&pageSize=12&apiKey=${process.env.REACT_APP_API_KEY}&format=json&page=${page}`)
+        fetch(`https://api.bestbuy.com/v1/products((categoryPath.id=${id}))?sort=${sort}&pageSize=12&apiKey=${import.meta.env.VITE_API_KEY}&format=json&page=${page}`)
         .then(re => {
             if (!re.ok) throw new Error(`Error: Request failed with status code ${re.status} (${re.statusText})`)
             else {
